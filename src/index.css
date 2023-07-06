@@ -900,6 +900,7 @@ pre[class*="language-"] {
   justify-content: center;
   align-items: center;
   column-gap: 8px;
+  user-select: none;
 }
 
 
