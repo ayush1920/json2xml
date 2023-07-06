@@ -5,7 +5,7 @@ It is inspired from [Codebeautify jsontoxml](https://codebeautify.org/jsontoxml#
 <br><br>
 <img src="./preview_resource/website_preview.png" alt="drawing"/> 
 
-## Feature
+## Features
 
 The project features json highlighting and convertion with other option to beautify json and option to updload from your local system.<br>
 
