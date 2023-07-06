@@ -5,7 +5,7 @@ It is inspired from [Codebeautify jsontoxml](https://codebeautify.org/jsontoxml#
 
 
 ## Feature
-<hr>
+
 
 The project features json highlighting and convertion with other option to beautify json and option to updload from your local system.<br>
 
@@ -40,7 +40,7 @@ Expands the code area to fill the entire width of the screen.<br><br>
 ### `Custom XML option is there for a recuring personal use and can be customized by updating "convertToXML" function in HomePage.`<br><br>
 
 ## Dependencies
-<hr>
+
 
 ### [xmltodict](https://github.com/martinblech/xmltodict/blob/master/xmltodict.py)
 The project also includes a modified javascript port of popular python library `xmltodict` under GNU Licence. You can find it under `/src/js/dict2xml`. Feel free to use and update it.
