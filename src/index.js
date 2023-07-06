@@ -4,7 +4,7 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux";
 import Home from './pages/Home'
 import store from './redux/store'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import ReactDOM from 'react-dom';
 
 ReactDOM.render(

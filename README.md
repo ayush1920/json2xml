@@ -1,4 +1,4 @@
-# <div style='display:flex;flex-direction:row;align-items:center; column-gap:20px; font-weight:700; font-size:1.4rem'><img src="./src/media/logo.png" alt="drawing" width="150"/> <div>JSON2XML<div><div>
+# <div style='display:flex;flex-direction:row;align-items:center; column-gap:20px; font-weight:700; font-size:1.4rem;cursor:pointer;' ><img src="./src/media/logo.png" alt="drawing" width="150" onclick="{()=>{window.open('ayush1920.github.io/json2xml/', '_blank');}"/> <div>JSON2XML<div><div>
 
 The project converts json to xml in browser and is a pure implementation in javascript and reactjs which can run independently as a web application also.\
 It is inspired from [Codebeautify jsontoxml](https://codebeautify.org/jsontoxml#) application and implements other json customization functions on top of it.<br>
