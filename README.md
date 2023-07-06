@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# <div style='display:flex;flex-direction:row;align-items:center; column-gap:20px; font-weight:700; font-size:1.4rem'><img src="./src/media/logo.png" alt="drawing" width="150"/> <div>JSON2XML<div><div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The project converts json to xml in browser and is a pure implementation in javascript and reactjs which can run independently as a web application also.\
+It is inspired from [Codebeautify jsontoxml](https://codebeautify.org/jsontoxml#) application and implements other json customization functions on top of it.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Feature
+<hr>
 
-### `npm start`
+The project features json highlighting and convertion with other option to beautify json and option to updload from your local system.<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### | Beautify JSON
+Indents and beautify json text.<br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### | Compress JSON
+Removes extra spacing and padding from json text and minifies it.<br>
 
-### `npm test`
+### | Sample
+Load a sample json already present in the application.<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### | History
+Toggle between previous loaded json and the current text.<br>
 
-### `npm run build`
+### | Open from file
+Open a json file from your local system. Files are limited to 1 MB to prevent browser from running out of memory while formatting and highlighting. The limit can be updated by modifying the `FILE_SIZE_LIMIT` variable in `/src/js/constants.js` file.<br>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### | Download
+Download the json file to your local system.<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### | Clear
+Clears the input code area.<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### | Copy
+Copy text to clipboard.<br>
 
-### `npm run eject`
+### | Expand input code area
+Expands the code area to fill the entire width of the screen.<br><br>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+`Similar features are implemented for output code block.`
+### `Custom XML option is there for a recuring personal use and can be customized by updating "convertToXML" function in HomePage.`<br><br>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Dependencies
+<hr>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### [xmltodict](https://github.com/martinblech/xmltodict/blob/master/xmltodict.py)
+The project also includes a modified javascript port of popular python library `xmltodict` under GNU Licence. You can find it under `/src/js/dict2xml`. Feel free to use and update it.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### [Prism js](https://prismjs.com/)
+Prism js is used for syntax highlighting in json and xml.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### [Indent js](https://zebzhao.github.io/indent.js/)
+Indent js is used for indenting xml code.
