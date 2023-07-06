@@ -324,19 +324,19 @@ const convert_list = (items, ids, parent, attr_type, item_func, cdata, newLineCh
 
         else if (isinstance(item, Object)) {
             if (Object.keys(attr_type).length === 0) {
-                output.push(`<${item_name}>${convert_dict(item, ids, parent, attr_type, item_func, cdata, newLineChar)}</${item_name}>`)
+                output.push(`<${item_name}>${newLineChar}${convert_dict(item, ids, parent, attr_type, item_func, cdata, newLineChar)}${newLineChar}</${item_name}>`)
             }
             else
-                output.push(`<${item_name} type="dict">${convert_dict(item, ids, parent, attr_type, item_func, cdata, newLineChar)}</${item_name}>`)
+                output.push(`<${item_name} type="dict">${newLineChar}${convert_dict(item, ids, parent, attr_type, item_func, cdata, newLineChar)}${newLineChar}</${item_name}>`)
 
         }
 
         else if (isinstance(item, Array)) {
             if (Object.keys(attr_type).length === 0) {
-                output.push(`<${item_name} ${make_attrstring(attr)}>${convert_list(item, ids, item_name, attr_type, item_func, cdata, newLineChar)}</${item_name}>`)
+                output.push(`<${item_name} ${make_attrstring(attr)}>${newLineChar}${convert_list(item, ids, item_name, attr_type, item_func, cdata, newLineChar)}${newLineChar}</${item_name}>`)
             }
             else
-                output.push(`<${item_name} type="list"${make_attrstring(attr)}>${convert_list(item, ids, item_name, attr_type, item_func, cdata, newLineChar)}</${item_name}>`)
+                output.push(`<${item_name} type="list"${make_attrstring(attr)}>${newLineChar}${convert_list(item, ids, item_name, attr_type, item_func, cdata, newLineChar)}${newLineChar}</${item_name}>`)
         }
 
         else if (objType === undefined)
