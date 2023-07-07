@@ -446,7 +446,6 @@ const Home = () => {
                             <img src={coffeeIcode} style={{ position: 'relative', width: '36px' }} />
                             <span> and </span>
                             <img src={heartIcon} style={{ position: 'relative', width: '30px' }} />
-                            <span> from Ayush</span>
 
                             <div className='branding-container' style={{ cursor: 'pointer' }} onClick={redirectToGithub}>
                                 <text> View on Github</text>
