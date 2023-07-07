@@ -43,10 +43,10 @@ Expands the code area to fill the entire width of the screen.<br><br>
 
 
 ### [xmltodict](https://github.com/martinblech/xmltodict/blob/master/xmltodict.py)
-The project also includes a modified javascript port of popular python library `xmltodict` under GNU Licence. You can find it under `/src/js/dict2xml`. Feel free to use and update it.
+The project also includes a modified javascript port of popular python library `xmltodict` under MIT Licence. You can find it under `/src/js/dict2xml`. Feel free to use and update it.
 
 ### [Prism js](https://prismjs.com/)
 Prism js is used for syntax highlighting in json and xml.
 
 ### [Indent js](https://zebzhao.github.io/indent.js/)
-Indent js is used for indenting xml code.
+Indenting xml code is facilitated by Indent js.
