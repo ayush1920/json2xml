@@ -37,7 +37,7 @@ Copy text to clipboard.<br>
 Expands the code area to fill the entire width of the screen.<br><br>
 
 `Similar features are implemented for output code block.`
-### `Custom XML option is there for a recuring personal use and can be customized by updating "convertToXML" function in HomePage.`<br><br>
+### `Custom XML option is there for a recurring personal use and can be customized by updating "convertToXML" function in HomePage.`<br><br>
 
 ## Dependencies
 
