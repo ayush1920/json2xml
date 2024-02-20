@@ -59,6 +59,10 @@ const nested_update = (obj) => {
         if (isinstance(obj[key], Object)) {
             obj[key] = nested_update(obj[key])
         }
+
+        if(isinstance(obj[key], Array)) {
+            obj[key] = obj[key].map(value => nested_update(value))
+        }
     })
 
     return obj
@@ -70,7 +74,7 @@ const customdict2xml = (jsonObject, conversionProps) => {
     jsonObject = nested_update(jsonObject);
     
     let xmlString = dicttoxml(jsonObject, conversionProps);
-    xmlString = xmlString.replace(/__type__\d+/gm, 'child_type')
+    xmlString = xmlString.replace(/__type__\d+/gm, 'type')
     xmlString = xmlString.replace(/__child_type__\d+/gm,'child_type')
     xmlString = xmlString.replace('<root>', '').replace('</root>', '')
     console.log(xmlString)
