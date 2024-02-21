@@ -17,6 +17,9 @@ const isinstance = (value, objClass) => {
     if (!objClass)
         return new Error(`cannot match class of ${objClass}`)
 
+    if (value === null)
+        return false;
+
     if (objClass.constructor !== Array)
         objClass = [objClass]
     return objClass.includes(value.constructor)
@@ -27,6 +30,12 @@ const my_item_func = (x) => {
 }
 
 const nested_update = (obj) => {
+    if (isinstance(obj, Array))
+        return obj.map(value => nested_update(value))
+
+    if(!isinstance(obj, Object))
+        return obj
+
     let temp_count = 0;
     let keys = Object.keys(obj);
 
@@ -60,7 +69,7 @@ const nested_update = (obj) => {
             obj[key] = nested_update(obj[key])
         }
 
-        if(isinstance(obj[key], Array)) {
+        else if(isinstance(obj[key], Array)) {
             obj[key] = obj[key].map(value => nested_update(value))
         }
     })
@@ -77,7 +86,6 @@ const customdict2xml = (jsonObject, conversionProps) => {
     xmlString = xmlString.replace(/__type__\d+/gm, 'type')
     xmlString = xmlString.replace(/__child_type__\d+/gm,'child_type')
     xmlString = xmlString.replace('<root>', '').replace('</root>', '')
-    console.log(xmlString)
     return xmlString
 }
 
