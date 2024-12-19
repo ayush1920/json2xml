@@ -19,6 +19,7 @@ import { FILE_SIZE_LIMIT, REPO_URL } from '../js/constants';
 
 const sampleJSON = '{"employees":{"employee":[{"id":"1","firstName":"Tom","lastName":"Cruise","photo":"https://pbs.twimg.com/profile_images/735509975649378305/B81JwLT7.jpg"},{"id":"2","firstName":"Maria","lastName":"Sharapova","photo":"https://pbs.twimg.com/profile_images/786423002820784128/cjLHfMMJ_400x400.jpg"},{"id":"3","firstName":"James","lastName":"Bond","photo":"https://pbs.twimg.com/profile_images/664886718559076352/M00cOLrh.jpg"}]}}'
 const indent = indentjs();
+const HIGHLIGHT_TEXT_LIMIT = 1_000_000
 
 const Home = () => {
     const [inputContainerExpanded, setInputContainerExpanded] = useState(false);
@@ -40,13 +41,13 @@ const Home = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (outputCodeContainer.current)
+        if (outputCodeContainer.current && (outputData.current.value.length < HIGHLIGHT_TEXT_LIMIT))
             Prism.highlightElement(outputCodeContainer.current)
     }, [rerenderOutput])
 
 
     useEffect(() => {
-        if (outputCodeContainer.current)
+        if (codeContainer.current && (codeContainerValue.current.length < HIGHLIGHT_TEXT_LIMIT))
             Prism.highlightElement(codeContainer.current);
     }, [rerenderInput]);
 
@@ -448,7 +449,7 @@ const Home = () => {
                             <img src={heartIcon} style={{ position: 'relative', width: '30px' }} />
 
                             <div className='branding-container' style={{ cursor: 'pointer' }} onClick={redirectToGithub}>
-                                <text> View on Github</text>
+                                <span> View on Github</span>
                                 <img src={githubLogo} style={{ width: '32px' }} />
                             </div>
                         </div>
