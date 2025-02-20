@@ -144,11 +144,11 @@ const escape_xml = (s) => {
     catch { }
 
     if (objType === String) {
-        s = s.replace('&', '&amp;')
-        s = s.replace('"', '&quot;')
-        s = s.replace('\'', '&apos;')
-        s = s.replace('<', '&lt;')
-        s = s.replace('>', '&gt;')
+        s = s.replace(new RegExp('&', 'g'), '&amp;')
+        s = s.replace(new RegExp('"', 'g'), '&quot;')
+        s = s.replace(new RegExp('\'', 'g'), '&apos;')
+        s = s.replace(new RegExp('<', 'g'), '&lt;')
+        s = s.replace(new RegExp('>', 'g'), '&gt;')
     }
     return s
 }
@@ -260,7 +260,11 @@ const convert_dict = (obj, ids, parent, attr_type, item_func, cdata, newLineChar
         key = x[0];
         attr = x[1];
 
-        if (isinstance(val, Boolean))
+        
+        if (val === null)
+            output.push(convert_none(key, val, attr_type, cdata, attr, newLineChar))
+        
+        else if (isinstance(val, Boolean))
             output.push(convert_bool(key, val, attr_type, cdata, attr, newLineChar))
 
 
